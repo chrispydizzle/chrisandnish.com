@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine:400,700|Raleway|Open+Sans');
+@import "compass";
+@import "compass/support";
+@import "compass/css3/images";
+@import "compass/css3/shared";
+
+$colors: (
+        text: black,
+        highlight: gold,
+        bg: #ffb300,
+        bg-highlight-a: rgba(255, 155, 0, .5),
+        bg-highlight: rgb(255, 155, 0)
+);
+
+@mixin cn-transition($time:.25s, $target:all, $ease:ease-out) {
+  @include transition($time $target $ease);
+}
+
+body {
+  margin: 0;
+  background-color: map-get($colors, bg);
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  text-align: center;
+  #menubox {
+    padding: 0;
+  }
+
+  @include cn-transition();
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400vw;
+  z-index: 100;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 1vh;
+      a {
+        @include cn-transition();
+        color: map-get($colors, text);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        font-size: 2vh;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: map-get($colors, highlight);
+        }
+
+        &:active {
+          color: map-get($colors, highlight);
+        }
+
+        &:visited {
+
+        }
+      }
+    }
+  }
+}
+
+.header-inner {
+  width: 235px;
+}
+
+.burger span {
+  display: block;
+  width: 235px;
+  position: relative;
+  cursor: pointer;
+}
+
+.header {
+  margin-left: 80vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    margin-left: 75vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-inner {
+    width: 35vw;
+  }
+
+  .header {
+    margin-left: 55vw;
+  }
+
+  .burger span {
+    width: 35vw;
+  }
+}
+
+.header-inner {
+  background-color: rgba(255, 255, 255, 0.68)
+}
+
+input#menu {
+  @include cn-transition();
+  display: none;
+
+  ~ .burger {
+    @include cn-transition();
+    margin-top: 2vh;
+
+    span {
+      @include cn-transition();
+      height: 12vh;
+
+      background-image: url(../artifacts/elephant.png);
+      background-position-x: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  ~ .header-inner {
+    @include cn-transition();
+    margin-top: -27vh;
+    margin-bottom: 2vh;
+  }
+
+  &:checked {
+    ~ .header-inner {
+      margin: 0;
+    }
+
+    ~ .burger {
+      span {
+        height: 12vh;
+        background-color: rgba(255, 255, 255, 0.68);
+      }
+    }
+
+  }
+}
+
+.bottom-sliding-section {
+  background-color: map-get($colors, bg);
+}
+
+.pages {
+  position: relative;
+}
+
+.header {
+
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  font-weight: 400
+}
+
+p, span, li, a {
+  font-size: 14px;
+
+}
+
+#home h1.title {
+  font-family: "Tangerine", Helvetica, Arial, sans-serif;
+  font-size: 11vh;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.36) 2px 3px 6px;
+}
+
+h1.title {
+  background-size: initial;
+  background-repeat-x: no-repeat;
+  background-repeat-y: repeat;
+  background-position-x: center, -100vw !important;
+
+}
+
+#ustravel-inner {
+  overflow-y: scroll;
+  padding: 4vh 4vw;
+  background: rgba(255, 255, 255, .75);
+  margin: 5vh auto;
+  max-width: 800px;
+  height: 90vh;
+}
+
+.page-outer {
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: center, -100vw;
+  background-size: auto 100%;
+  float: left;
+  width: 100vw;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#site-body *, #site-body *:before, #site-body *:after, *, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+#site-body *, #site-body *:before, #site-body *:after, *, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+.Travel {
+  position: absolute;
+  z-index: 50;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .25);
+}
+
+#decision {
+  .decision-inner {
+    margin: 10vh 20vw;
+    height: 70vh;
+    background: white;
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 3vh;
+      padding-top: 1em;
+    }
+
+    .dividers {
+      height: 100%;
+      width: 50%;
+      float: left;
+    }
+
+  }
+}
+
+.formwindow {
+  BACKGROUND-COLOR: #fde9d6;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5em;
+  max-width: 670px;
+  text-align: center;
+
+  h3 {
+    text-align: center;
+    line-height: 2em;
+  }
+}
+
+.container, .container .pages {
+  width: 400vw;
+}
+
+#site-body.site-body-css {
+  height: 100%;
+  position: relative
+}
+
+@media (min-width: 1100px) {
+  #site-body.site-body-css {
+    min-width: 1100px
+  }
+}
+
+.container, .pages, .page-outer, .page-inner {
+  height: 100%
+}
+
+.pages {
+  -webkit-transform: translate3d(0, 0, 0)
+}
+
+.page-background:after, #home.page-outer:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding-bottom: 25.5%
+}
+
+#home {
+  overflow: hidden;
+
+  .home-copy {
+    width: 700px;
+    margin: 0 auto 40px;
+    overflow: hidden
+  }
+}
+
+#home #scroll-container-height-helper {
+
+}
+
+#home #scroll-arrow-container-height-helper {
+  padding-bottom: 20px
+}
+
+#home #scroll-down-container {
+  visibility: hidden;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 140px;
+  margin: 0 auto;
+  cursor: pointer
+}
+
+#home #scroll-down-container #scroll-down-arrow {
+  margin: 0 auto;
+  background-size: cover;
+  width: 22px;
+  height: 20px
+}
+
+#home #home-inner {
+  padding-bottom: 40px;
+  background-size: contain;
+  background-position: bottom;
+  background-position-x: center;
+}
+
+#home .bottom-sliding-section {
+  z-index: 11;
+  height: 100%;
+  position: relative;
+  top: 3000px;
+}
+
+#home h1.title {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: initial;
+  transform: translateZ(0);
+  line-height: 0.9;
+  padding-top: 3vh;
+  margin: 0;
+  background-position-x: center;
+}
+
+#home h3.subtitle {
+  text-align: center;
+  font-size: 2.5vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  border-top: 1px solid black
+}
+
+#scroll-arrow-container-height-helper {
+  padding-top: 3vh;
+}
+
+#rsvp-dialog {
+  display: none;
+  opacity: 0;
+}

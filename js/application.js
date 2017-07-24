@@ -2,6 +2,7 @@ let head;
 let pages;
 let header;
 let eleph;
+let pageContainer;
 
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -25,6 +26,11 @@ $(document).ready(function () {
     head = $('h1.title');
     pages = $('.page-outer');
     header = $('.header');
+    pageContainer = $('#pages');
+
+    pages.each(function (i, page) {
+        $(page).attr('initLeft', $(page).position().left);
+    });
 
     head.css('background-image', 'url(artifacts/bg/hotel.jpg), url(artifacts/bg/nishfaveofplace.png)');
     pages.css('background-image', 'url(artifacts/bg/hotel.jpg), url(artifacts/bg/nishfaveofplace.png)');
@@ -33,6 +39,7 @@ $(document).ready(function () {
         ease: Elastic.easeOut.config(1, 1),
         top: (winHeight - containerHeight) + 'px', onUpdate: backgroundCheck, onUpdateParams: ["{self}", 'top']
     });
+
     let windowHash = window.location.hash;
 
     if (windowHash === "#visa") {
@@ -51,7 +58,6 @@ $(document).ready(function () {
 
 function fireRand(time) {
     if (eleph.css('background-color') === "rgba(0, 0, 0, 0)") {
-
         TweenMax.to(eleph, time / 1000, {
             ease: Elastic.easeInOut.config(1.2, .2), css: {transform: 'scale(1.4)'}, onComplete: function (a) {
                 TweenMax.to(eleph, a / 1000, {
@@ -66,13 +72,10 @@ function fireRand(time) {
             }, onCompleteParams: [time]
         });
     }
-
     else {
         let nextTime = Math.random() * 4000;
         setTimeout(fireRand, nextTime);
     }
-
-
 }
 
 
@@ -92,9 +95,25 @@ function backgroundCheck(theVal) {
 
 function change(page) {
     let target = $('#' + page);
-    let homeAdjust = $('#home').position().left;
     let offset = target.position().left * -1;
-    TweenMax.to($('.page-outer'), 1, {ease: Expo.easeOut, 'left': offset + homeAdjust});
+
+    pages.each(function (i, content) {
+        if (target === page) {
+            TweenMax.to(content, 1, {ease: Expo.easeOut, css: {'left': offset + "px"}});
+        }
+        else {
+            TweenMax.to(content, 1, {ease: Expo.easeOut, css: {'left': $(content).attr('initLeft')}});
+        }
+    });
+
+
+    // TweenMax.to(pageContainer, 15, { ease: Expo.easeOut, 'margin-left': offset + "px"});
+
+    // TMax($(document), 1, {ease: Expo.easeOut, })
+}
+
+function TMax(refvar, refTime = 1, props) {
+    TweenMax.to(refvar, refTime, props);
 }
 
 /*function decide(choice1, choice2, parent) {

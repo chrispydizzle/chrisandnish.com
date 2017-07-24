@@ -1,0 +1,143 @@
+<events>
+    <event>
+        <date>09/08/2017</date>
+        <time>08:00</time>
+        <description>Guests will land in the beautiful city of Udaipur in Rajasthan state.</description>
+        <icon>airplane.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>08:05</time>
+        <description>Guests will be picked up from the airport. The person with guest name sign mentioned in the RSVP
+            will be standing at the arrival gate.
+        </description>
+        <icon>auto.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>09:00</time>
+        <description>Arrival at royal palace The Chunda, which is situated overlooking the Aravalli Range and featuring
+            decorative reliefs and traditional Islamic domes. With bone-inlay artwork and hand painted walls and
+            ceilings, Chunda Palace has everything needed for a perfect wedding.
+        </description>
+        <icon>palace.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>14:30</time>
+        <title>HALDI CEREMONY</title>
+        <description>In our Indian Culture, Haldi or turmeric holds a special place of honour. It is known for its
+            anti-inflammatory and other healing properties, because of which it has become popular as a medicine as
+            well. In Indian wedding, this amazing ingredient has an entire ceremony to its name. You guessed it right!
+            It's Haldi ceremony.
+        </description>
+        <icon>pot.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>15:30</time>
+        <title>MEHNDI CEREMONY</title>
+        <description>Mehndi or "Mehendi" is a form of body art from Ancient India, in which decorative designs are
+            created on a person's body, using a paste, created from the powdered dry leaves of the henna plant (Lawsonia
+            inermis). Ancient in origin, mehndi is still a popular form of body art among the women of the Indian
+            Subcontinent, Africa and the Middle East.
+        </description>
+        <icon>henna.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>18:30</time>
+        <title>FOLK DANCE PERFORMANCE</title>
+        <description>Ghoomar is a traditional folk dance of Rajasthan. The dance is chiefly perfonmed by veiled women
+            who wear flowing dresses called ghaghara. Ghoomar is often performed on special occasions, such as at
+            weddings and during Holi and for worshiping religious deities. and sometimes lasts for hours.
+        </description>
+        <icon>dance.png</icon>
+    </event>
+    <event>
+        <date>09/08/2017</date>
+        <time>21:00</time>
+        <title>DANCE &amp; CHILL</title>
+        <description>Family dance performance by Shamim Dan and Ali Dan. Others are free to JOin in or prepare there own
+            performance. Let's just assume, at the end it would be crowd dance :)
+        </description>
+        <icon>music.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>10:00</time>
+        <title>Groom Arrival</title>
+        <description>This is the day of Nikah (Wedding). The groom along with his side of the family will have a royal
+            Rajasthani style arrival to the palace. The parade on elephant wilt be taken along with the music followed
+            by the dance.
+        </description>
+        <icon>rider.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>11:00</time>
+        <title>NIKAH CEREMOny</title>
+        <description>Nikah is the type of marriage between which is been practiced by Islam. The marriage contract is
+            signed in a nikah ceremony, in which the groom or his representative proposes to the bride in front of at
+            least two witnesses. stating the details of the me her. The bride and groom demonstrate their free will by
+            repeating the word qabul ("I accept," in Arabic) three times.
+        </description>
+        <icon>couple.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>13:30</time>
+        <title>PHOTO BOOTH</title>
+        <description>
+            Post Nikah, there will be a fun photoshoot along with all the guests as well as the Candid Photography of
+            Bride &amp; Groom. To make it more fun, there will be props which can be used in the photoshoot at the
+            booth.
+        </description>
+        <icon>photo.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>15:00</time>
+        <title>FAMILY GAMES</title>
+        <description>A typical Indian wedding is always an amalgamation of lots of colors, dance, music, fun and fun
+            can't be over without a round of family games like musical chair, passing the pillow, find the ring- Be the
+            king!
+        </description>
+        <icon>party.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>19:00</time>
+        <title>INSTRUMENTAL MUSIC</title>
+        <description>Rajasthani wedding would be incomplete without the live instrumental music performance. Along with
+            our evening reception, guests will be able to enjoy the taste of Typical rajasthani live instrumental music.
+        </description>
+        <icon>instrumental.png</icon>
+    </event>
+    <event>
+        <date>09/09/2017</date>
+        <time>21:00</time>
+        <title>EVENING RECEPTION</title>
+        <description>Wi thout the beautiful evening reception, the wedding would be incomplete. We will end the royal
+            Rajasthani wedding with a serene evening reception at the location over looking the beauty of Udaipur.
+        </description>
+        <icon>receptioncake.png</icon>
+    </event>
+    <event>
+        <date>09/10/2017</date>
+        <time>08:00</time>
+        <title>Time to say goodbye</title>
+        <description>After fun-full 2 days wedding, we need to get back to our routine and time to say good bye, We will
+            miss you and hopefully gather-up soon again for some other occassion.
+        </description>
+        <icon>goodbye.png</icon>
+    </event>
+    <event>
+        <date>09/10/2017</date>
+        <time>09:00</time>
+        <title>Departure</title>
+        <description>A drop-off service will be provided for those who need to go to the airport. Bon-Voyage!!!
+        </description>
+        <icon>away.png</icon>
+    </event>
+</events>

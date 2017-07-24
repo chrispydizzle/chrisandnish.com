@@ -1,11 +1,12 @@
+<?php
+include_once $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/cn.php';
+?>
 <!DOCTYPE html>
 <html>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <head>
     <title>Chris &amp; Nish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <!--<link rel="apple-touch-icon"
           href="assets/RG_amper_60.png">
     <link rel="apple-touch-icon" sizes="76x76"
@@ -35,20 +36,20 @@
                             <li>
                                 <a id="home-menu" href="#home" onclick="change('home');">Home</a>
                             </li>
-                            <li>
-                                <a id="location" href="#venue" onclick="change('venue');">Location</a>
+                            <li style="visibility: hidden;">
+                                <a id="locationln" href="#venue" onclick="change('venue');">Location</a>
                             </li>
                             <li>
-                                <a id="events" href="#events" onclick="change('events');">Events</a>
+                                <a id="eventsln" href="#events" onclick="change('events');">Events</a>
                             </li>
                             <li>
-                                <a id="visa" href="#visa" onclick='change("ustravel");'>Visa</a>
+                                <a id="visaln" href="#visa" onclick='change("ustravel");'>Visa</a>
                             </li>
-                            <li>
-                                <a id="culture" href="#culture" onclick='change("culture");'>Culture</a>
+                            <li style="visibility: hidden;">
+                                <a id="cultureln" href="#culture" onclick='change("culture");'>Culture</a>
                             </li>
-                            <li>
-                                <a id="rsvp" href="#rsvp" onclick='change("rsvp");'>RSVP</a>
+                            <li style="visibility: hidden;">
+                                <a id="rsvpln" href="#rsvp" onclick='change("rsvp");'>RSVP</a>
                             </li>
                         </ul>
                     </nav>
@@ -58,10 +59,9 @@
 
                     </span>
                 </label>
-
             </div>
         </div>
-        <div class="pages">
+        <div id="pages" class="pages">
             <section class="page-outer first" id="home">
                 <div class="page-inner" id="home-inner">
                     <div class="bottom-sliding-section">
@@ -79,7 +79,7 @@
                     <h1>Visa</h1>
                     If you've never been to India before, you'll need to apply for a visa.
                     This is done easily at the <a href="https://indiantouristvisa.org.in/visa/tvoa.php" target="_blank">India
-                    Online Visa Office</a>.
+                        Online Visa Office</a>.
                     <br/><br/>
                     Below is a quick run-through of the questionnaire, and what you should probably put in if you're
                     flying from the US.
@@ -105,46 +105,68 @@
                     </div>
                 </div>
             </section>
-            <section class="rsvp" id="rsvp-dialog">
-                <div class="rsvp-inner" id="rsvp-inner">
-                    <div class="formcontainer">
-                        <div class="formsection">
-                            <h1>You're coming, right?</h1>
-                            <fieldset>
-                                <input type="radio" id="comingY" name="coming" value="Y"><label
-                                    for="comingY">Yes</label>
-                                <input type="radio" id="comingN" name="coming" value="N"><label for="comingN">No</label>
-                            </fieldset>
-                        </div>
-                        <div class="formsection">
-                            <h1>Awesome!</h1>
-                            <input type="radio" id="name" name="name" placeholder="What's your name?"/>
-                        </div>
-                        <div class="formsection">
-                            <h1>Your food?</h1>
-                            <fieldset>
-                                <input type="radio" id="foodVeg" name="veg" value="Y"><label
-                                    for="comingY">Vegitarian</label>
-                                <input type="radio" id="foodNonveg" name="veg" value="N"><label
-                                    for="comingN">Non-Veg</label>
-                            </fieldset>
-                        </div>
-                        <div class="formsection">
-                            <textarea id="comments" name="comments" placeholder="Something else to say?"/>
-                        </div>
-                        <div class="formsection">
-                            <button id="comments" name="comments" placeholder="Something else to say?"/>
-                        </div>
-                    </div>
+            <section class="page-outer" id="events">
+                <div class="page-inner" id="events-inner">
+                    <h1>Events</h1>
+                    <?php
+                    ini_set('display_errors', 'On');
+                    error_reporting(E_ALL);
+                    showevents();
+                    //menuevents($cn);
+                    // writeevents($cn);
+
+
+                    /*'foreach ($cn as $cn1){
+                     //       echo '<div class="formwindow" img="artifacts/icons/'.$cn1->icon.'">';
+                      //      echo '<h3>' .$cn1->title. '</h3>';
+                       //     echo '<p>' .$cn1->description. '</p>';                    }
+                    */ ?>
+
+
+                    <h3>Form 1</h3>
+
                 </div>
-            </section>
         </div>
         </section>
+        <section class="rsvp" id="rsvp-dialog">
+            <div class="rsvp-inner" id="rsvp-inner">
+                <div class="formcontainer">
+                    <div class="formsection">
+                        <h1>You're coming, right?</h1>
+                        <fieldset>
+                            <input type="radio" id="comingY" name="coming" value="Y"><label
+                                    for="comingY">Yes</label>
+                            <input type="radio" id="comingN" name="coming" value="N"><label for="comingN">No</label>
+                        </fieldset>
+                    </div>
+                    <div class="formsection">
+                        <h1>Awesome!</h1>
+                        <input type="radio" id="name" name="name" placeholder="What's your name?"/>
+                    </div>
+                    <div class="formsection">
+                        <h1>Your food?</h1>
+                        <fieldset>
+                            <input type="radio" id="foodVeg" name="veg" value="Y"><label
+                                    for="comingY">Vegitarian</label>
+                            <input type="radio" id="foodNonveg" name="veg" value="N"><label
+                                    for="comingN">Non-Veg</label>
+                        </fieldset>
+                    </div>
+                    <div class="formsection">
+                        <textarea id="comments" name="comments" placeholder="Something else to say?"/>
+                    </div>
+                    <div class="formsection">
+                        <button id="comments" name="comments" placeholder="Something else to say?"/>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <footer>
-    </footer>
-    <
+    </section>
 </div>
+<footer>
+    <div>This site is also a shameless plug! <a href="https://cpsharp.net.">CP Sharp</a>!</div>
+</footer>
 </div>
 </body>
 </html>
